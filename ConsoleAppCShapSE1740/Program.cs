@@ -5,10 +5,13 @@ public class Program
     public static void Main(string[] args)
     {
         int a = 10, b = 20, c = 30;
-      
-        Console.WriteLine($"Sum = {Add(a,b)}");
 
-        Console.WriteLine($"Tong cac so tu 1 den 100 la: {Sum(100) }");
+        Num num = new Num();
+        num.Num01 = a;
+        num.Num02 = b;
+
+        Console.WriteLine(num.Add());
+
         Console.ReadLine();
     }
 
@@ -28,6 +31,7 @@ public class Program
     {
         long total = 0;
         int i = 1;
+        //do..while, for, forEach
         while (i <= n)
         {
             if (i % 2 == 0) total += i;//total = total + i; -=, *=, /=, %=...
@@ -37,5 +41,10 @@ public class Program
         return total;
     }
   
+    public static long Total(int n)
+    {
+        if (n == 0 || n == 1) return n;
+        return n + Total(n-1);
+    }
 
 }
